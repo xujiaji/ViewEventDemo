@@ -1,0 +1,37 @@
+@startuml
+actor 我 #orange
+participant Button1 #e1ff00
+participant ViewGroup2 #00ffd9
+participant ViewGroup1 #1d810c
+participant MainActivity
+
+我 -[#red]> MainActivity:按下0
+MainActivity --> ViewGroup1:0
+ViewGroup1 --> ViewGroup2:0
+'ViewGroup2 --> ViewGroup2:0
+ViewGroup2 --> Button1:0
+Button1 --> Button1:0
+'ViewGroup2 <-- Button1:0
+'ViewGroup1 <-- ViewGroup2:0
+'MainActivity <-- ViewGroup1:0
+
+
+我 -[#red]> MainActivity:移动2
+MainActivity --> ViewGroup1:2
+ViewGroup1 --> ViewGroup2:2
+'ViewGroup2 --> ViewGroup2:2
+ViewGroup2 --> Button1:2
+Button1 -->Button1:2
+'MainActivity --> MainActivity:2
+'MainActivity --> ViewGroup1:2
+
+我 -[#red]> MainActivity:抬起1
+MainActivity --> ViewGroup1:1
+ViewGroup1 --> ViewGroup2:1
+'ViewGroup2 --> ViewGroup2:1
+ViewGroup2 --> Button1:1
+Button1 --> Button1:1
+'MainActivity --> MainActivity:1
+'MainActivity --> ViewGroup1:1
+
+@enduml

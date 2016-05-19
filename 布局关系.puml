@@ -1,0 +1,87 @@
+@startuml
+
+class View{
+...
+__
+...
+}
+
+class ViewGroup{
+...
+__
+...
+}
+
+class FrameLayout{
+...
+__
+...
+}
+
+class ViewGroup1{
+...
+__
+...
++ onInterceptTouchEvent(MotionEvent ev):boolean
++ dispatchTouchEvent(MotionEvent event):boolean
++ onTouchEvent(MotionEvent event):boolean
+}
+
+class ViewGroup2{
+...
+__
+...
++ onInterceptTouchEvent(MotionEvent ev):boolean
++ dispatchTouchEvent(MotionEvent event):boolean
++ onTouchEvent(MotionEvent event):boolean
+}
+
+class View1{
+...
+__
+...
++ dispatchTouchEvent(MotionEvent event):boolean
++ onTouchEvent(MotionEvent event):boolean
+}
+
+class Button{
+...
+__
+...
+}
+
+class Button1{
+...
+__
++ dispatchTouchEvent(MotionEvent event):boolean
++ onTouchEvent(MotionEvent event):boolean
+...
+}
+
+class Activity{
+...
+__
+...
+}
+
+class MainActivity{
+...
+__
++ dispatchTouchEvent(MotionEvent event):boolean
++ onTouchEvent(MotionEvent event):boolean
+...
+}
+
+ViewGroup --|> View
+FrameLayout --|> ViewGroup
+ViewGroup1 --|> FrameLayout
+ViewGroup2 --|> FrameLayout
+Button --|> View
+Button1 --|> Button
+View1 --|> View
+MainActivity --|> Activity
+ViewGroup1 <--* MainActivity
+ViewGroup2 <--* MainActivity
+View1 <--* MainActivity
+Button1 <--* MainActivity
+@enduml
